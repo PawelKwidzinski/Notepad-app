@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes</title>
+    <div th:replace="fragments :: headerlinks" th:remove="tag"></div>
+</head>
+<body class="notes">
+<header th:replace="fragments :: navigator"></header>
+
+<main role="main" class="main">
+    <div class="container">
+        <div class="row col-md-12 form-container">
+            <div class="row col-md-12">
+                <h1>New note</h1>
+            </div>
+
+            <div class="row col-md-12 form-container">
+                <form th:action="@{/notes/add}" method="post" th:object="${note}" class="col-md-12">
+                    <input type="hidden" th:field="*{id}" th:value="*{id}">
+                    <div class="row col-md-12 form-row-container">
+                        <div class="col-md-6">
+                            <label for="title">Title:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" id="title" th:field="*{title}" th:value="*{title}" class="form-control col-md-12">
+                        </div>
+                    </div>
+                    <div class="row col-md-12 form-row-container">
+                        <div class="col-md-6">
+                            <label for="exampleFormControlTextarea1">Description:</label>
+                        </div>
+                        <div class="col-md-6">
+                            <textarea class="form-control" th:field="*{description}" th:value="*{description}" id="exampleFormControlTextarea1" rows="4"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row col-lg-12 form-row-buttons">
+                        <div class="col-lg-6">
+                            <button type="reset" class="btn-lg btn-warning offset-3 col-md-6">Reset</button>
+                        </div>
+                        <div class="col-lg-6">
+                            <button type="submit" class="btn-lg btn-primary offset-3 col-md-6">Save</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+<!--    <div class="form-container">-->
+<!--        <form th:action="@{/notes/add}" method="post" th:object="${note}">-->
+<!--            <input type="hidden" th:field="*{id}" th:value="*{id}">-->
+<!--            <div class="form-group">-->
+<!--                <label for="exampleFormControlInput1">Title</label>-->
+<!--                <input type="text" class="form-control" th:field="*{title}" id="exampleFormControlInput1" placeholder="Title for note">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="exampleFormControlTextarea1">Description</label>-->
+<!--                <textarea class="form-control" th:field="*{description}" id="exampleFormControlTextarea1" rows="3"></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Save</button>-->
+<!--        </form>-->
+<!--    </div>-->
+
+
+<div th:replace="fragments :: footer"></div>
+<div th:replace="fragments :: footerscripts"></div>
+</body>
+</html>
