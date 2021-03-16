@@ -23,9 +23,9 @@ public class NoteService {
         return repository.findAll();
     }
 
-    public void addNote(final Note toSave) {
+    public Optional<Note> addNote(final Note toSave) {
         toSave.setDate(LocalDate.now());
-        repository.save(toSave);
+        return Optional.of(repository.save(toSave));
     }
 
     public Optional<Note> findById(final Long noteId) {
@@ -33,6 +33,7 @@ public class NoteService {
     }
 
     public void deleteById(final Long id){
-        repository.deleteById(id);
+        Optional<Note> noteToRemove = findById(id);
+        repository.deleteById(noteToRemove.get().getId());
     }
 }
