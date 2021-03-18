@@ -23,4 +23,8 @@ application.properties file:
 * `spring.datasource.driver-class-name=`
 * `spring.jpa.hibernate.ddl-auto=`
 ## Screenshots
-
+![alt text](https://github.com/PawelKwidzinski/Notepad-app/blob/master/print_scn/note_list.JPG)
+![alt text](https://github.com/PawelKwidzinski/Notepad-app/blob/master/print_scn/create_note.JPG)
+![alt text](https://github.com/PawelKwidzinski/Notepad-app/blob/master/print_scn/before_edit_note.JPG)
+![alt text](https://github.com/PawelKwidzinski/Notepad-app/blob/master/print_scn/after_edit_note.JPG)
+![alt text](https://github.com/PawelKwidzinski/Notepad-app/blob/master/print_scn/delete_note.JPG)
